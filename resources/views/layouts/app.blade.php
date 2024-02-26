@@ -8,12 +8,31 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
-    <h1 class="text-4xl font-extrabold">@yield('titulo')</h1>
+<body class="bg-gray-100">
+    <header class="p-5 border-b bg-white shadow">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-3xl font-black">
+                Devstagram
+            </h1>
 
-    <hr />
+            <nav class="flex gap-2">
+                <a class="font-bold uppercase text-gray-600" href="#">Login</a>
+                <a class="font-bold uppercase text-gray-600" href="#">Crear cuenta</a>
+            </nav>
+        </div>
+    </header>
 
-    @yield('contenido')
+
+    <main class="container mx-auto mt-10">
+        <h2 class="font-black text-center mb-10 text-3xl">@yield('titulo')</h2>
+        @yield('contenido')
+    </main>
+
+    {{-- now es un helper de laravel --}}
+    <footer class="text-center p-5 text-gray-500 font-bold uppercase">
+        DevStagram - Todos los derechos reseverdados {{ now()-> year }}
+    </footer>
+
 </body>
 
 </html>

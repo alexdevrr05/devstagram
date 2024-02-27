@@ -29,7 +29,7 @@
     </main>
 
     {{-- now es un helper de laravel --}}
-    <footer class="text-center p-5 text-gray-500 font-bold uppercase">
+    <footer class="text-center p-5 text-gray-500 font-bold uppercase mt-10">
         DevStagram - Todos los derechos reseverdados {{ now()-> year }}
     </footer>
 

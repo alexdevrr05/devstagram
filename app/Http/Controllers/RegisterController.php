@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class RegisterController extends Controller
@@ -31,13 +32,18 @@ class RegisterController extends Controller
             'password_confirmation' => "",
         ]);
 
-        dd('Creando usuario...');
-
         // otra sintáxis
         // $this->validate($request, [
         //     'name' => ['required', 'max:30'],
         //     'username' => ['required', 'unique:users'],
         // ]);
 
+        // Es el equivalente INSERT INTO usuarios;
+        User::create([
+            'name' => $request->name,
+            'username' => $request->username,
+            'email' => $request->email,
+            'password' => $request->password,
+        ]);
     }
 }

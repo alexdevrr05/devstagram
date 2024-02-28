@@ -32,18 +32,27 @@ Regístrate en Devstagram
                 <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Username</label>
                 <input type="text" id="username" name="username" placeholder="Tu nombre de usuario"
                     class="border p-3 w-full rounded-lg">
+                @error('username')
+                <p class="bg-red-500 text-white my-2 rounded-lg texts-sm p-2 text-center">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="mb-5">
                 <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
                 <input type="text" id="email" name="email" placeholder="Tu email de registro"
                     class="border p-3 w-full rounded-lg">
+                @error('email')
+                <p class="bg-red-500 text-white my-2 rounded-lg texts-sm p-2 text-center">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="mb-5">
                 <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
                 <input type="password" id="password" name="password" placeholder="Contraseña de usuario"
                     class="border p-3 w-full rounded-lg">
+                @error('password')
+                <p class="bg-red-500 text-white my-2 rounded-lg texts-sm p-2 text-center">{{ $message }}</p>
+                @enderror
             </div>
 
             <div class="mb-5">

@@ -19,5 +19,23 @@ class RegisterController extends Controller
         // dd($request);
         // 'get' es el atributo del input
         // dd($request->get('email'));
+
+        // TODO: Validación
+
+        //  existe esta sintáxis
+        $this->validate($request, [
+            'name' => 'required|min:5',
+            'username' => 'required|unique:users',
+            'email' => "",
+            'password' => "",
+            'password_confirmation' => "",
+        ]);
+
+        // otra sintáxis
+        // $this->validate($request, [
+        //     'name' => ['required', 'max:30'],
+        //     'username' => ['required', 'unique:users'],
+        // ]);
+
     }
 }

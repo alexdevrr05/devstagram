@@ -31,7 +31,8 @@ Regístrate en Devstagram
             <div class="mb-5">
                 <label for="username" class="mb-2 block uppercase text-gray-500 font-bold">Username</label>
                 <input type="text" id="username" name="username" placeholder="Tu nombre de usuario"
-                    class="border p-3 w-full rounded-lg">
+                    class="border p-3 w-full rounded-lg @error('username') border-red-500 @enderror"
+                    value="{{ old('username') }}">
                 @error('username')
                 <p class="bg-red-500 text-white my-2 rounded-lg texts-sm p-2 text-center">{{ $message }}</p>
                 @enderror
@@ -40,7 +41,8 @@ Regístrate en Devstagram
             <div class="mb-5">
                 <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
                 <input type="text" id="email" name="email" placeholder="Tu email de registro"
-                    class="border p-3 w-full rounded-lg">
+                    class="border p-3 w-full rounded-lg @error('email') border-red-500 @enderror"
+                    value="{{ old('email') }}">
                 @error('email')
                 <p class="bg-red-500 text-white my-2 rounded-lg texts-sm p-2 text-center">{{ $message }}</p>
                 @enderror
@@ -49,7 +51,7 @@ Regístrate en Devstagram
             <div class="mb-5">
                 <label for="password" class="mb-2 block uppercase text-gray-500 font-bold">Password</label>
                 <input type="password" id="password" name="password" placeholder="Contraseña de usuario"
-                    class="border p-3 w-full rounded-lg">
+                    class="border p-3 w-full rounded-lg @error('password') border-red-500 @enderror">
                 @error('password')
                 <p class="bg-red-500 text-white my-2 rounded-lg texts-sm p-2 text-center">{{ $message }}</p>
                 @enderror
@@ -59,7 +61,8 @@ Regístrate en Devstagram
                 <label for="password_confirmation" class="mb-2 block uppercase text-gray-500 font-bold">Repetir
                     password</label>
                 <input type="password" id="password_confirmation" name="password_confirmation"
-                    placeholder="Repite tu contraseña" class="border p-3 w-full rounded-lg">
+                    placeholder="Repite tu contraseña"
+                    class="border p-3 w-full rounded-lg @error('password_confirmation') border-red-500 @enderror">
             </div>
 
             <input type="submit" value="Crear cuenta"

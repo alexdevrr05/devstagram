@@ -10,4 +10,12 @@ class RegisterController extends Controller
     {
         return view('auth.register');
     }
+
+    // dd = dump and die
+    /** para imprimir los datos de forma legible para 
+     * humanos y luego detener la ejecución del script */
+    public function store()
+    {
+        dd('post...');
+    }
 }

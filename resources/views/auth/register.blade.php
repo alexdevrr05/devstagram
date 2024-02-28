@@ -12,7 +12,8 @@ Regístrate en Devstagram
     </div>
 
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow">
-        <form>
+        <form action="{{ route('register') }}" method="POST">
+            @csrf
             <div class="mb-5">
                 <label for="name" class="mb-2 block uppercase text-gray-500 font-bold">Nombre</label>
                 <input type="text" id="name" name="name" placeholder="Tu nombre" class="border p-3 w-full rounded-lg">

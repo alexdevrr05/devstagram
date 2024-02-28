@@ -13,4 +13,5 @@ Route::get('/', function () {
  *  que devuelve la vista principal de un recurso como "index"
  */
 // controlador
-Route::get('/crear-cuenta', [RegisterController::class, 'index']);
+Route::get('/crear-cuenta', [RegisterController::class, 'index'])->name('register');
+Route::post('/crear-cuenta', [RegisterController::class, 'store']);

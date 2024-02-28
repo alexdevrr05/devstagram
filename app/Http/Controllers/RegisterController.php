@@ -14,8 +14,10 @@ class RegisterController extends Controller
     // dd = dump and die
     /** para imprimir los datos de forma legible para 
      * humanos y luego detener la ejecución del script */
-    public function store()
+    public function store(Request $request)
     {
-        dd('post...');
+        // dd($request);
+        // 'get' es el atributo del input
+        // dd($request->get('email'));
     }
 }

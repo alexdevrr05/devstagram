@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -21,6 +22,10 @@ class RegisterController extends Controller
         // 'get' es el atributo del input
         // dd($request->get('email'));
 
+        // Generate a URL friendly "slug" from a given string.
+        // Modificar el Request
+        $request->request->add(['username' => Str::slug($request->username)]);
+
         // TODO: Validación
 
         //  existe esta sintáxis
@@ -32,15 +37,10 @@ class RegisterController extends Controller
             'password_confirmation' => "",
         ]);
 
-        // otra sintáxis
-        // $this->validate($request, [
-        //     'name' => ['required', 'max:30'],
-        //     'username' => ['required', 'unique:users'],
-        // ]);
-
         // Es el equivalente INSERT INTO usuarios;
         User::create([
             'name' => $request->name,
+            // En este punto, username ya viene reescrito (como slug)
             'username' => $request->username,
             'email' => $request->email,
             'password' => $request->password,

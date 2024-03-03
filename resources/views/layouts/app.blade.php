@@ -15,10 +15,24 @@
                 Devstagram
             </h1>
 
+            {{-- auth directiva: revisa si un usuario está auntenticado --}}
+            @auth
+            <nav class="flex gap-2">
+                <a class="font-bold text-gray-600" href="#">Hola: <span class="font-normal">
+                        {{ auth()->user()->username }}
+                    </span>
+                </a>
+                <a href="{{ route('register') }}" class="font-bold uppercase text-gray-600">Cerrar sesión</a>
+            </nav>
+            @endauth
+
+            @guest
             <nav class="flex gap-2">
                 <a class="font-bold uppercase text-gray-600" href="#">Login</a>
                 <a href="{{ route('register') }}" class="font-bold uppercase text-gray-600">Crear cuenta</a>
             </nav>
+            @endguest
+
         </div>
     </header>
 

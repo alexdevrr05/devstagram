@@ -12,7 +12,13 @@ Inicia sesión en Devstagram
 
     <div class="md:w-4/12 bg-white p-6 rounded-lg shadow">
         <form method="POST" action="{{route('login')}}">
+            {{-- Cross-Site Request Forgery --}}
             @csrf
+
+            @if(session('mensaje'))
+            <p class="bg-red-500 text-white my-2 rounded-lg texts-sm p-2 text-center">{{ session('mensaje') }}</p>
+            @endif
+
             <div class="mb-5">
                 <label for="email" class="mb-2 block uppercase text-gray-500 font-bold">Email</label>
                 <input type="text" id="email" name="email" placeholder="Tu email de registro"

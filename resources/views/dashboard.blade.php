@@ -12,7 +12,7 @@ Tu cuenta
             <img src="{{ asset('imgs/usuario.svg') }}" alt="Imagen de usuario">
         </div>
         <div class="md:w-8/12 lg:w-6/12 px-5">
-            <p class="text-gray-700 text-xl">{{ auth()->user()->username }}</p>
+            <p class="text-gray-700 text-xl">{{ $user->username }}</p>
         </div>
 
     </div>

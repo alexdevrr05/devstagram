@@ -10,7 +10,7 @@ Inicia sesión en Devstagram
         <img src="{{ asset('imgs/login.jpg') }}" alt="Imagen login de usuarios">
     </div>
 
-    <div class="md:w-4/12 bg-white p-6 rounded-lg shadow">
+    <div class="md:w-4/12 bg-white p-6 rounded-lg shadow-xl">
         <form method="POST" action="{{route('login')}}">
             {{-- Cross-Site Request Forgery --}}
             @csrf

@@ -38,6 +38,12 @@ Inicia sesión en Devstagram
                 @enderror
             </div>
 
+            {{-- Mantener sesion activa --}}
+            <div class="mb-5">
+                <input type="checkbox" name="example"> <label class="text-gray-500 text-sm">Mantener mi sesión
+                    abierta</label>
+            </div>
+
             <input type="submit" value="Iniciar sesión"
                 class="cursor-pointer bg-sky-600 hover:bg-sky-700 transition-colors uppercase font-bold text-white w-full p-3 rounded-lg">
 

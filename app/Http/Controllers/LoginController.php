@@ -19,7 +19,7 @@ class LoginController extends Controller
         ]);
 
         // back: redirigir al usuario de vuelta al formulario
-        if(!auth()->attempt($request->only('email', 'password'))) {
+        if(!auth()->attempt($request->only('email', 'password'), $request->remember)) {
             return back()->with('mensaje', 'Credenciales incorrectas');
         }
         

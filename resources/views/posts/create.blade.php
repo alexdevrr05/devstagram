@@ -25,12 +25,10 @@ Crea una nueva publicación
 
             <div class="mb-5">
                 <label for="descripcion" class="mb-2 block uppercase text-gray-500 font-bold">Descripción</label>
-                <textarea id="descripcion" name="descripcion" placeholder="Descripción de la publicación"
-                    class="border p-3 w-full rounded-lg @error('name') border-red-500 @enderror"
-                    value="{{ old('descrpcion') }}">
-                </textarea>
+                <textarea id="descripcion" name="descripcion" placeholder="Descripción de la publicación" class="border p-3 w-full rounded-lg @error('name') border-red-500 
+                    @enderror">{{ old('descripcion') }}</textarea>
 
-                @error('titulo')
+                @error('descripcion')
                 <p class="bg-red-500 text-white my-2 rounded-lg texts-sm p-2 text-center">{{ $message }}</p>
                 @enderror
             </div>

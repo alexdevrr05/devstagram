@@ -24,6 +24,8 @@ class LoginController extends Controller
         }
         
         // Si las credenciales son correctas
-        return redirect()->route('posts.index');
+        // En este punto el usuario ya está autenticado
+        // Podemos hacer uso de auth para tomar la sesion y redireccionar
+        return redirect()->route('posts.index', auth()->user()->username);
     }
 }

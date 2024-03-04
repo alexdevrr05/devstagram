@@ -19,7 +19,7 @@
             @auth
             <nav class="flex gap-2">
                 <a class="font-bold text-gray-600" href="#">Hola: <span class="font-normal">
-                        {{ auth()->user()->username }}
+                        {{ auth()->user()->name }}
                     </span>
                 </a>
 

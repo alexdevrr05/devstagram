@@ -22,7 +22,7 @@
                         {{ auth()->user()->username }}
                     </span>
                 </a>
-                <a href="{{ route('register') }}" class="font-bold uppercase text-gray-600">Cerrar sesión</a>
+                <a href="{{ route('logout') }}" class="font-bold uppercase text-gray-600">Cerrar sesión</a>
             </nav>
             @endauth
 

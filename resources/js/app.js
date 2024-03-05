@@ -16,5 +16,6 @@ const dropzone = new Dropzone("#dropzone", {
 });
 
 dropzone.on("success", (file, response) => {
-    console.log(response);
+    // se toma response.imagen porque asi retornamos el json (en ImagenController)
+    document.querySelector('[name="imagen"]').value = response.imagen;
 });

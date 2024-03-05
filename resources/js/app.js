@@ -14,3 +14,7 @@ const dropzone = new Dropzone("#dropzone", {
     maxFiles: 1,
     uploadMultiple: false,
 });
+
+dropzone.on("success", (file, response) => {
+    console.log(response);
+});

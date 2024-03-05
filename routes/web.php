@@ -29,6 +29,7 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 
 // Route Model Binding
 Route::get('/{user:username}', [PostController::class, 'index'])->name('posts.index');
-Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create'); // muestra formulario
+Route::post('/posts', [PostController::class, 'store'])->name('posts.store'); // Guardar en la base de datos
 
 Route::post('/imagenes', [ImagenController::class, 'store'])->name('imagenes.store');

@@ -4,15 +4,21 @@
 Crea una nueva publicación
 @endsection
 
+{{-- Hace que solo use los estilos SOLO donde se requiera --}}
+@push('styles')
+<link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+@endpush
+{{-- Hace que solo use la config. de Dropzone SOLO donde se requiera --}}
+@push('scripts')
+{{-- Configuracion del dropzone --}}
+@vite('resources/js/app.js')
+@endpush
+
 @section('contenido')
 <div class="md:flex md:items-center">
     <div class="md:w-1/2 px-10">
 
-        <form 
-            id="dropzone"
-            action="{{ route('imagenes.store') }}" 
-            method="POST" 
-            enctype="multipart/form-data" 
+        <form id="dropzone" action="{{ route('imagenes.store') }}" method="POST" enctype="multipart/form-data"
             class="dropzone border-dashed border-2 w-full h-96 rounded flex flex-col justify-center items-center">
         </form>
 

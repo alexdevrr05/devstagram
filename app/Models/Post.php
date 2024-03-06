@@ -15,4 +15,11 @@ class Post extends Model
         'imagen', 
         'user_id'
     ];
+
+    // relación: Pertenece A (inversa)
+    // Un post solo puede tener un usuario
+    public function user() {
+        // Belongs To
+        return $this->belongsTo(User::class)->select(['name', 'username']);
+    }
 }

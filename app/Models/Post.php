@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
-     /** whitelist: true */ 
+     /** es como el whitelist: true de NestJS */ 
     protected $fillable = [
         'titulo', 
         'descripcion', 

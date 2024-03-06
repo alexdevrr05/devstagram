@@ -40,13 +40,23 @@ class PostController extends Controller
         //     'imagen' => $request->imagen,
         //     'user_id' => auth()->user()->id,
         // ]);
-        // Otra forma de crear registros
-        $post = new Post;
-        $post->titulo = $request->titulo;
-        $post->descripcion = $request->descripcion;
-        $post->imagen = $request->imagen;
-        $post->user_id  = auth()->user()->id;
-        $post->save();
+
+        // 2a forma de crear registros
+        // $post = new Post;
+        // $post->titulo = $request->titulo;
+        // $post->descripcion = $request->descripcion;
+        // $post->imagen = $request->imagen;
+        // $post->user_id  = auth()->user()->id;
+        // $post->save();
+
+        // 3ra forma de crear registros
+        // "posts" es el nombre de la relacion que existe en el modelo User.php
+        $request->user()->posts()->create([
+            'titulo' => $request->titulo,
+            'descripcion' => $request->descripcion,
+            'imagen' => $request->imagen,
+            'user_id' => auth()->user()->id,
+        ]);
 
         return redirect()->route('posts.index', [
             'user' => auth()->user()->username,

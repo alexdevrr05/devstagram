@@ -21,6 +21,7 @@ class PostController extends Controller
 
         return view('dashboard', [
             'user' => $user,
+            // hace disponible los posts en la vista
             'posts' => $posts
         ]);
     }

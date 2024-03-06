@@ -67,6 +67,13 @@ class PostController extends Controller
         return redirect()->route('posts.index', [
             'user' => auth()->user()->username,
         ]); 
-
     }
+
+    public function show(Post $post)
+    {
+        return view('posts.show', [
+            'post' => $post
+        ]);
+    }
+
 }

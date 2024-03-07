@@ -10,8 +10,11 @@ class PostController extends Controller
 {
     public function __construct()
     {
-        // protege la ruta (solo se muestra si hay una sesion iniciada)
-        $this->middleware('auth');
+        /**
+         * el usuario tiene que estar autenticado antes de acceder a 
+         * cualquiera de los metodos definidos en este controlador 
+         */
+        $this->middleware('auth')->except(['index', 'show']);
     }
 
     public function index(User $user)

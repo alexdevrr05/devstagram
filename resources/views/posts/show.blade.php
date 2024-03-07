@@ -24,6 +24,7 @@ Post: {{ $post->titulo }}
     </div>
     <div class="md:w-1/2 p-5">
         <div class="shadow bg-white p-5 mb-5">
+            @auth
             <p class="text-xl font-bold text-center mb-4">Agrega un nuevo comentario</p>
             <form action="">
                 <div class="mb-5">
@@ -36,11 +37,10 @@ Post: {{ $post->titulo }}
                     <p class="bg-red-500 text-white my-2 rounded-lg texts-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
-
                 <input type="submit" value="Comentar"
                     class="cursor-pointer bg-sky-600 hover:bg-sky-700 transition-colors uppercase font-bold text-white w-full p-3 rounded-lg">
-
             </form>
+            @endauth
         </div>
     </div>
 </div>

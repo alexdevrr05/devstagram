@@ -22,4 +22,10 @@ class Post extends Model
         // Belongs To
         return $this->belongsTo(User::class)->select(['name', 'username']);
     }
+
+    // TODO: PENDIENTE REMOVER O DEJAR
+    // Un post puede tener muchos comentarios
+    public function comentarios() {
+        return $this->hasMany(Comentario::class);
+    } 
 }

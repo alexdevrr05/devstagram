@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             /** Tabla pivote: es una tabla intermedia utilizada para establecer 
              * una RELACIÓN DE MUCHOS A MUCHOS entre dos entidades o modelos */
-            $table->foreignId('user_id')->constrained();
-            $table->foreignId('post_id')->constrained();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('post_id')->constrained()->onDelete('cascade');
             $table->string('comentario');
             $table->timestamps();
         });

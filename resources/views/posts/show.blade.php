@@ -22,6 +22,7 @@ Post: {{ $post->titulo }}
             <p class="mt-5">{{ $post->descripcion }}</p>
         </div>
         @auth
+        {{-- Mostrar delete button solo si es propietario del post --}}
         @if($post->user_id === auth()->user()->id)
         <form method="POST" action="{{ route('posts.destroy', [ 'post' => $post ]) }}">
             {{-- Método spoofing --}}

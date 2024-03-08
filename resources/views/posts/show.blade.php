@@ -46,9 +46,11 @@ Post: {{ $post->titulo }}
             @endif
 
             <script>
-                setTimeout(function() {
+                if(document.getElementById('mensaje')) {
+                    setTimeout(function() {
                     document.getElementById('mensaje').style.display = 'none';
-                }, 3000);
+                    }, 3000);
+                }
             </script>
 
 

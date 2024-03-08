@@ -19,6 +19,10 @@ return new class extends Migration
             /* foreignId: establece integridad referencial
              * user_id: columna para claves externas referentes a 'users'
              * cascade: elimina posts al eliminar un usuario */
+
+             /* Si no se utiliza el método constrained(), 
+              * Laravel seguirá las convenciones predeterminadas 
+              * asumiendo que la columna user_id hace referencia a la tabla user.*/
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

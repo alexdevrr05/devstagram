@@ -17,7 +17,7 @@ Post: {{ $post->titulo }}
             {{-- Obtenemos el usuario asociado al post --}}
             <p class="font-bold">{{ $post->user->username }}</p>
             {{-- Timestamps: Automáticamente manejado por Laravel para fechas de creación/actualización --}}
-            {{-- diffForHumans: Carbon (integrado en Laravel) muestra diferencia en formato fácil de entender --}}
+            {{-- diffForHumans: Carbon (integrado en Laravel) muestra dife en formato fácil de entender --}}
             <p class="text-sm text-gray-500">{{ $post->created_at->diffForHumans() }}</p>
             <p class="mt-5">{{ $post->descripcion }}</p>
         </div>

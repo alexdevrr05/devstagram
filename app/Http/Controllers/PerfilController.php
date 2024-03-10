@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class PerfilController extends Controller
@@ -10,9 +11,10 @@ class PerfilController extends Controller
     {
        $this->middleware('auth'); 
     }
-    public function index()
+    public function index(User $user)
     {
-        dd('Desde el index');
+        $this->authorize('viewAny', $user);
+        return view('perfil.index');
     }
 
     public function store()

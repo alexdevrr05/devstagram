@@ -48,5 +48,5 @@ Route::delete('/post/{post}/likes', [LikeController::class, 'destroy'])->name('p
 
 
 // Perfil
-Route::get('/editar-perfil', [PerfilController::class, 'index'])->name('perfil.index');
+Route::get('/{user:username}/editar-perfil', [PerfilController::class, 'index'])->name('perfil.index');
 Route::post('/{user:username}/editar-perfil', [PerfilController::class, 'store'])->name('perfil.store');

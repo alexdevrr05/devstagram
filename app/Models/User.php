@@ -51,9 +51,13 @@ class User extends Authenticatable
         return $this->hasMany(Post::class);
     }
 
-    // TODO: PENDIENTE REMOVER O DEJAR
     // Un usuario puede tener muchos comentarios
     public function comentarios() {
         return $this->hasMany(Comentario::class);
+    }
+
+    // Un usuario puede dar muchos likes
+    public function likes() {
+        return $this->hasMany(Like::class);
     }
 }

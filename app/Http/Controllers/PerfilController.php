@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class PerfilController extends Controller
 {
@@ -17,8 +18,18 @@ class PerfilController extends Controller
         return view('perfil.index');
     }
 
-    public function store()
-    {
-       dd('Desde el store'); 
+    public function store(Request $request)
+    { 
+        // Modificar el Request
+        $request->request->add(['username' => Str::slug($request->username)]);
+
+        /** .auth()->user()->id: esto es útil cuando estás actualizando un registro y quieres
+         *  asegurarte de que no estás duplicando el nombre de usuario de otro usuario, pero permitiendo 
+         *  que el usuario actual mantenga su propio nombre de usuario.*/ 
+
+        $this->validate($request, [
+            // cuando hay mas de 3 reglas de validacion es recomendable usar un arreglo
+            'username' => ['required', 'unique:users,username,'.auth()->user()->id, 'min:3', 'max:20', 'not_in:twitter,editar-perfil'],
+        ]);
     }
 }

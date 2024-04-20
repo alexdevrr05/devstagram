@@ -42,11 +42,11 @@ class PerfilController extends Controller
             $imagenServidor->save($imagenPath);
         }
 
-        // Guardar cambios
         $usuario = User::find(auth()->user()->id);
-
+        
         $usuario->username = $request->username;
         $usuario->imagen = $nombreImagen ?? '';
+        // Guardar cambios
         $usuario->save();
 
         // Redireccionar al perfil del usuario

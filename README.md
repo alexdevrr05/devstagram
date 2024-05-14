@@ -12,4 +12,7 @@ Comando con el cual se creó el proyecto
 composer create composer create-project laravel/laravel devstagram
 ```
 
-
+Después de que creamos la base de datos y colocamos en el `.env` file las variables, ejecutamos:
+```
+php artisan migrate
+```

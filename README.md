@@ -16,3 +16,10 @@ Después de que creamos la base de datos y colocamos en el `.env` file las varia
 ```
 php artisan migrate
 ```
+
+
+Comando para no tener que escribir el path del binario `sail` (esta linea se coloca en el bash o zsh, depende qué usemos): 
+```
+alias sail='[ -f sail ] && bash sail || bash vendor/bin/sail'
+```
+

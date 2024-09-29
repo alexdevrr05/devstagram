@@ -1,24 +1,10 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+@extends('layouts.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+@section('title')
+<h2>Nosotros</h2>
+@endsection
 
-    <title>Laravel</title>
-
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.bunny.net">
-    <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-</head>
-
-<body>
-    <nav>
-        <a href="/">Principal</a>
-        <a href="/nosotros">Nosotros</a>
-    </nav>
-    <h1>Nosotros</h1>
-</body>
-
-</html>
+{{-- No es obligatorio usarlo --}}
+@section('content')
+<h2>Contenido de Nosotros</h2>
+@endsection
